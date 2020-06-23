@@ -1,0 +1,89 @@
+$card-padding: 10px;
+$card-border-radius: 5px;
+$card-border: 1px solid darkgrey;
+
+
+.main {
+  display: grid;
+  grid-gap: 10px;
+}
+
+  .main {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "title title"
+  "lead lead"
+  "left right"
+  "footer footer";
+}
+
+@media only screen and (max-width: 600px), screen and (device-width: 360px) {
+  .main {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "title"
+  "lead"
+  "left"
+  "right"
+  "footer";
+}
+}
+
+
+
+.header {
+  grid-area: title;
+}
+
+.lead {
+  grid-area: lead;
+
+}
+
+%card-shared {
+  padding: $card-padding;
+  border-radius: $card-border-radius;
+  border: $card-border;
+
+}
+
+.requirements {
+  @extend %card-shared;
+  grid-area: left;
+}
+
+.status {
+  @extend %card-shared;
+  grid-area: right;
+}
+
+.footer {
+  grid-area: footer;
+
+}
+
+
+  #mytable {
+    width: 80%;
+
+    thead {
+      border-bottom: 3px solid black;
+    }
+
+    th, td {
+      border-bottom: 1px solid grey;
+    }
+    
+  }
+
+
+
+#image_container {
+  width: 100%;
+  height: 100%;
+}
+
+#edx_logo {
+  display: block;
+  margin: auto;
+}
